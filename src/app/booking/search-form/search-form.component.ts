@@ -47,6 +47,7 @@ export class SearchFormComponent implements OnInit {
   errorMsg: any;
   successMsg: any;
   cDate: any;
+  blueTheme:any;
 
   @ViewChild('ft', { static: true }) FT: ElementRef;
   @ViewChild('tt', { static: true }) TT: ElementRef;
@@ -177,7 +178,7 @@ export class SearchFormComponent implements OnInit {
 
 
   bookRoom(roomId: any, date: any, fTime: any, toTime: any, reason: any) {
-    this.spinner.show();
+    
     this.errorMsg = '';
     this.successMsg = '';
     fTime = fTime.value;
@@ -189,6 +190,7 @@ export class SearchFormComponent implements OnInit {
       this.errorMsg = "All Fields are mandatory";
     }
     else {
+      this.spinner.show();
       this.errorMsg = "";
       let asim = new DateTimeFormatPipe(date);
       var bookDate = asim.transform(date);
