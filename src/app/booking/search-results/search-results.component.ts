@@ -6,6 +6,7 @@ import { ConstantService } from 'src/app/_service/constant.service';
 import { HttpErrorResponse } from '@angular/common/http';
 
 
+
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
