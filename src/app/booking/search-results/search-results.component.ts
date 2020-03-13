@@ -39,6 +39,7 @@ export class SearchResultsComponent implements OnInit {
 
   }
 
+<<<<<<< Updated upstream
   cancelBookedRoom(booking: Booking) {
     this.errorMsg = '';
     this.successMsg = '';
@@ -46,15 +47,33 @@ export class SearchResultsComponent implements OnInit {
     this.bookingService.cancelBooking(Number(bookID)).subscribe(
       data => this.handleCanceledData(data, booking),
       err => this.handleError(err)
+=======
+  cancelBookedRoom(booking:Booking){
+    //if(booking.)
+    var bookID = booking.bookingId;//19;
+    console.log('Cancel Booking with ID  : ' +bookID);
+    this.bookingService. cancelBooking(Number(bookID)).subscribe(
+      data => this.handleCanceledData(data,booking),
+      err=>this.handleError(err)
+>>>>>>> Stashed changes
     )
 
   }
 
+<<<<<<< Updated upstream
   handleCanceledData(data: any, booking: Booking) {
     this.bookingList.forEach((item, index) => {
       if (item === booking) this.bookingList.splice(index, 1);
     });
     this.successMsg = data.message;
+=======
+  handleCanceledData(data:any,booking:Booking){
+    console.log('Cancelled Success : ' +JSON.stringify(data))
+    this.bookingList.forEach((item, index) => {
+      if(item === booking) this.bookingList.splice(index,1);
+    });
+    //this.bookingList = [];
+>>>>>>> Stashed changes
   }
 
 
@@ -63,8 +82,16 @@ export class SearchResultsComponent implements OnInit {
   }
 
   doCancelButtonEnabled(empID: string) {
+<<<<<<< Updated upstream
     this.userID = localStorage.getItem(this.cons.userId)
     if (this.userID == empID) {
+=======
+    //empID = '821386'; // hardcode for now---
+   // console.log('User ID : ' +empID);
+    var loggedId = localStorage.getItem(this.cons.userId)//this.authService.empId;
+    //console.log('loggedId : ' +loggedId);
+    if (loggedId == empID){
+>>>>>>> Stashed changes
       return true;
     }
     else {
